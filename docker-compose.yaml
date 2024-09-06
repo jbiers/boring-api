@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:14.3
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db/seed.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_PASSWORD=b0ring-p0stgr3s
+      - POSTGRES_USER=boring
